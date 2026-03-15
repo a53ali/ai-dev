@@ -55,6 +55,7 @@ Inside a Copilot CLI session, invoke via the `/skills` command or reference by n
 | **Technical Debt Prioritization** | `skills/manager/technical-debt-prioritization.md` | Identifying and queuing tech debt with business framing |
 | **Engineering Metrics** | `skills/manager/engineering-metrics.md` | Analyzing DORA metrics and team performance signals |
 | **Backlog Refinement** | `skills/manager/backlog-refinement.md` | Running effective refinement sessions, INVEST criteria, sizing, splitting |
+| **Flow Metrics Analysis** | `skills/manager/flow-metrics-analysis.md` | Analyze story cycle time in-progress→done, WIP, flow efficiency, DORA correlation |
 
 ### 🔀 Cross-Cutting Skills
 
