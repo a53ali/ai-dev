@@ -54,6 +54,7 @@ Inside a Copilot CLI session, invoke via the `/skills` command or reference by n
 | **Incident Retrospective** | `skills/manager/incident-retrospective.md` | Running blameless post-mortems |
 | **Technical Debt Prioritization** | `skills/manager/technical-debt-prioritization.md` | Identifying and queuing tech debt with business framing |
 | **Engineering Metrics** | `skills/manager/engineering-metrics.md` | Analyzing DORA metrics and team performance signals |
+| **Backlog Refinement** | `skills/manager/backlog-refinement.md` | Running effective refinement sessions, INVEST criteria, sizing, splitting |
 
 ### 🔀 Cross-Cutting Skills
 
