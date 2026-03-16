@@ -2,5 +2,10 @@
 name: cross-cutting
 description: Skills that apply across monoliths and distributed systems
 skills:
+  - skills/cross-cutting/skill-router
   - skills/cross-cutting/strangler-fig
   - skills/cross-cutting/observability
+  - skills/cross-cutting/team-topology
+  - skills/cross-cutting/event-driven-design
+  - skills/cross-cutting/monolith-to-services
+  - skills/cross-cutting/ci-cd-pipeline-analysis

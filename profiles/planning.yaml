@@ -1,8 +1,10 @@
 # Planning — skills focused on planning, estimation, and delivery tracking
 name: planning
-description: Skills for sprint planning, story refinement, ADRs, and flow analysis
+description: Skills for sprint planning, story refinement, ADRs, roadmapping, and flow analysis
 skills:
   - skills/engineer/test-driven-development
   - skills/engineer/architecture-decision-record
   - skills/manager/backlog-refinement
   - skills/manager/flow-metrics-analysis
+  - skills/manager/sprint-health-check
+  - skills/manager/roadmap-prioritization

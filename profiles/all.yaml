@@ -1,6 +1,6 @@
 # All — every skill in the library
 name: all
-description: The complete skills library — all 15 skills
+description: The complete skills library — all 28 skills
 skills:
   # Engineer
   - skills/engineer/refactoring
@@ -11,12 +11,25 @@ skills:
   - skills/engineer/continuous-delivery
   - skills/engineer/api-design
   - skills/engineer/feature-flags
+  - skills/engineer/security-review
+  - skills/engineer/database-migration
+  - skills/engineer/pair-programming
+  - skills/engineer/documentation
   # Manager
   - skills/manager/backlog-refinement
   - skills/manager/incident-retrospective
   - skills/manager/technical-debt-prioritization
   - skills/manager/engineering-metrics
   - skills/manager/flow-metrics-analysis
+  - skills/manager/on-call-handoff
+  - skills/manager/hiring-leveling
+  - skills/manager/sprint-health-check
+  - skills/manager/roadmap-prioritization
   # Cross-cutting
   - skills/cross-cutting/strangler-fig
   - skills/cross-cutting/observability
+  - skills/cross-cutting/skill-router
+  - skills/cross-cutting/team-topology
+  - skills/cross-cutting/event-driven-design
+  - skills/cross-cutting/monolith-to-services
+  - skills/cross-cutting/ci-cd-pipeline-analysis

@@ -1,10 +1,12 @@
 # Recommended — starter set for any engineer or EM
-# Best 5 skills for day-to-day use with any AI coding agent
+# Best 7 skills for day-to-day use with any AI coding agent
 name: recommended
 description: A curated starter set — the highest-value skills for everyday use
 skills:
+  - skills/cross-cutting/skill-router
   - skills/engineer/refactoring
   - skills/engineer/code-review
   - skills/engineer/debugging
   - skills/engineer/test-driven-development
   - skills/manager/backlog-refinement
+  - skills/cross-cutting/observability

@@ -26,12 +26,12 @@ for arg in "$@"; do
       echo "Usage: install.sh [--profile=PROFILE] [--agent=AGENT]"
       echo ""
       echo "Profiles:"
-      echo "  recommended   Starter set (refactoring, code-review, debugging, tdd, backlog-refinement)"
-      echo "  engineer      All 8 engineer / IC skills"
-      echo "  manager       All 5 engineering manager skills"
-      echo "  planning      Planning-focused skills (tdd, adr, backlog, flow-metrics)"
-      echo "  cross-cutting Strangler fig + observability"
-      echo "  all           All 15 skills"
+      echo "  recommended   Starter set (skill-router, refactoring, code-review, debugging, tdd, backlog-refinement, observability)"
+      echo "  engineer      All 12 engineer / IC skills"
+      echo "  manager       All 9 engineering manager skills"
+      echo "  planning      Planning-focused skills (tdd, adr, backlog, flow-metrics, sprint-health, roadmap)"
+      echo "  cross-cutting All 7 cross-cutting skills (skill-router, strangler-fig, observability, team-topology, events, monolith, ci-cd)"
+      echo "  all           All 28 skills"
       echo ""
       echo "Agents:"
       echo "  claude    → ~/.claude/skills/   (Claude Code, agentskills.io format)"
@@ -56,11 +56,13 @@ esac
 
 # ── Skill lists per profile ───────────────────────────────────────────────────
 skills_recommended=(
+  "skills/cross-cutting/skill-router"
   "skills/engineer/refactoring"
   "skills/engineer/code-review"
   "skills/engineer/debugging"
   "skills/engineer/test-driven-development"
   "skills/manager/backlog-refinement"
+  "skills/cross-cutting/observability"
 )
 
 skills_engineer=(
@@ -72,6 +74,10 @@ skills_engineer=(
   "skills/engineer/continuous-delivery"
   "skills/engineer/api-design"
   "skills/engineer/feature-flags"
+  "skills/engineer/security-review"
+  "skills/engineer/database-migration"
+  "skills/engineer/pair-programming"
+  "skills/engineer/documentation"
 )
 
 skills_manager=(
@@ -80,6 +86,10 @@ skills_manager=(
   "skills/manager/technical-debt-prioritization"
   "skills/manager/engineering-metrics"
   "skills/manager/flow-metrics-analysis"
+  "skills/manager/on-call-handoff"
+  "skills/manager/hiring-leveling"
+  "skills/manager/sprint-health-check"
+  "skills/manager/roadmap-prioritization"
 )
 
 skills_planning=(
@@ -87,11 +97,18 @@ skills_planning=(
   "skills/engineer/architecture-decision-record"
   "skills/manager/backlog-refinement"
   "skills/manager/flow-metrics-analysis"
+  "skills/manager/sprint-health-check"
+  "skills/manager/roadmap-prioritization"
 )
 
 skills_cross_cutting=(
+  "skills/cross-cutting/skill-router"
   "skills/cross-cutting/strangler-fig"
   "skills/cross-cutting/observability"
+  "skills/cross-cutting/team-topology"
+  "skills/cross-cutting/event-driven-design"
+  "skills/cross-cutting/monolith-to-services"
+  "skills/cross-cutting/ci-cd-pipeline-analysis"
 )
 
 skills_all=(
