@@ -1,6 +1,6 @@
 # All — every skill in the library
 name: all
-description: The complete skills library — all 37 skills
+description: The complete skills library — all 51 skills
 skills:
   # Engineer
   - skills/engineer/refactoring
@@ -15,6 +15,10 @@ skills:
   - skills/engineer/database-migration
   - skills/engineer/pair-programming
   - skills/engineer/documentation
+  - skills/engineer/performance-optimization
+  - skills/engineer/contract-testing
+  - skills/engineer/database-optimization
+  - skills/engineer/chaos-engineering
   # Manager
   - skills/manager/backlog-refinement
   - skills/manager/incident-retrospective
@@ -27,6 +31,11 @@ skills:
   - skills/manager/roadmap-prioritization
   - skills/manager/sprint-retrospective
   - skills/manager/story-slicing
+  - skills/manager/technical-strategy
+  - skills/manager/one-on-one-coaching
+  - skills/manager/engineer-onboarding
+  - skills/manager/okr-engineering-alignment
+  - skills/manager/vendor-evaluation
   # Cross-cutting
   - skills/cross-cutting/strangler-fig
   - skills/cross-cutting/observability
@@ -38,8 +47,13 @@ skills:
   - skills/cross-cutting/agent-quality-patterns
   - skills/cross-cutting/mcp-safety-review
   - skills/cross-cutting/jira-intelligence
+  - skills/cross-cutting/context-engineering
+  - skills/cross-cutting/platform-engineering
+  - skills/cross-cutting/slo-sla-management
+  - skills/cross-cutting/developer-experience
   # QA
   - skills/qa/test-strategy
   - skills/qa/bug-reporting
   - skills/qa/acceptance-criteria
   - skills/qa/exploratory-testing
+  - skills/qa/accessibility-testing

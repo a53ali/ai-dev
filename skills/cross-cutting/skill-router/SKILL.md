@@ -65,6 +65,9 @@ Describe your problem in plain language. The router will:
 | Setting up or reviewing the test pipeline | `ci-cd-pipeline-analysis` → `test-strategy` |
 | AI/LLM test automation quality | `agent-quality-patterns` → `test-strategy` |
 | Evaluating or adopting an MCP server | `mcp-safety-review` → `agent-quality-patterns` |
+| Agent gives generic, unhelpful answers | `context-engineering` → `agent-quality-patterns` |
+| Need to write CLAUDE.md / AGENTS.md / copilot-instructions.md | `context-engineering` |
+| UI/UX accessibility audit or WCAG compliance | `accessibility-testing` |
 
 ### People & Teams
 | Trigger | Skills |
@@ -72,8 +75,24 @@ Describe your problem in plain language. The router will:
 | Team struggling to deliver | `team-topology` → `flow-metrics-analysis` → `sprint-health-check` |
 | Planning next quarter | `roadmap-prioritization` → `backlog-refinement` → `technical-debt-prioritization` |
 | Growing the team | `hiring-leveling` → `team-topology` |
+| New engineer joining the team | `engineer-onboarding` → `one-on-one-coaching` |
+| Preparing or running a 1:1 | `one-on-one-coaching` |
+| Writing or reviewing OKRs | `okr-engineering-alignment` → `engineering-metrics` |
+| Evaluating a new tool or vendor | `vendor-evaluation` |
+| Defining or improving tech direction | `technical-strategy` → `roadmap-prioritization` |
 | On-call handoff | `on-call-handoff` → `incident-retrospective` |
 | Tech debt is blocking features | `technical-debt-prioritization` → `refactoring` → `engineering-metrics` |
+
+### Platform & Reliability
+| Trigger | Skills |
+|---|---|
+| Setting up or improving an internal developer platform | `platform-engineering` → `developer-experience` |
+| Developers complaining about slow CI / friction | `developer-experience` → `ci-cd-pipeline-analysis` |
+| Defining reliability targets or error budgets | `slo-sla-management` → `observability` |
+| Service is slow or unreliable under load | `performance-optimization` → `observability` → `slo-sla-management` |
+| Testing service resilience | `chaos-engineering` → `observability` |
+| Microservices integration testing | `contract-testing` → `test-strategy` |
+| Slow database queries | `database-optimization` |
 
 ---
 

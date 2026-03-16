@@ -1,6 +1,6 @@
 # ai-dev — Skills Library for Engineers & Engineering Managers
 
-A curated set of **37 AI agent skills** for engineers, QA engineers, and engineering managers. Works with **Claude Code**, **Codex CLI**, and **GitHub Copilot CLI**. Language-agnostic, grounded in industry-proven principles.
+A curated set of **51 AI agent skills** for engineers, QA engineers, and engineering managers. Works with **Claude Code**, **Codex CLI**, and **GitHub Copilot CLI**. Language-agnostic, grounded in industry-proven principles.
 
 ---
 
@@ -57,8 +57,8 @@ cd ai-dev
 | `manager` | All 11 manager skills | EMs, tech leads, staff+ |
 | `qa` | test-strategy, bug-reporting, acceptance-criteria, exploratory-testing + 4 cross-cutting | QA engineers and SDETs |
 | `planning` | tdd, adr, backlog-refinement, flow-metrics, sprint-health, roadmap | Sprint planning and delivery |
-| `cross-cutting` | skill-router, strangler-fig, observability, team-topology, event-driven, monolith-to-services, ci-cd, agent-quality, mcp-safety-review, jira-intelligence | Architecture and platform work |
-| `all` | All 37 skills | Full library |
+| `cross-cutting` | skill-router, strangler-fig, observability, team-topology, event-driven, monolith-to-services, ci-cd, agent-quality, mcp-safety-review, jira-intelligence, context-engineering, platform-engineering, slo-sla-management, developer-experience | Architecture and platform work |
+| `all` | All 51 skills | Full library |
 
 ---
 
@@ -104,6 +104,7 @@ Skills work across monoliths, modular monoliths, and distributed/microservice ar
 | **Bug Reporting** | `skills/qa/bug-reporting/` | Write reproducible, high-quality bug reports with severity/priority rubric |
 | **Acceptance Criteria** | `skills/qa/acceptance-criteria/` | Given/When/Then scenarios, Definition of Ready, Definition of Done |
 | **Exploratory Testing** | `skills/qa/exploratory-testing/` | Test charters, SBTM, heuristics for finding what scripted tests miss |
+| **Accessibility Testing** | `skills/qa/accessibility-testing/` | WCAG 2.1 AA checklist, keyboard/screen reader scripts, axe-core CI integration |
 
 ### 🧭 Start Here
 
@@ -127,6 +128,10 @@ Skills work across monoliths, modular monoliths, and distributed/microservice ar
 | **Database Migration** | `skills/engineer/database-migration/` | Zero-downtime schema changes with expand/contract pattern |
 | **Pair Programming** | `skills/engineer/pair-programming/` | Structured driver/navigator pairing with AI agents or humans |
 | **Documentation** | `skills/engineer/documentation/` | READMEs, runbooks, API docs using the Divio system |
+| **Performance Optimization** | `skills/engineer/performance-optimization/` | Profile-first bottleneck analysis (CPU, memory, I/O, N+1) with runtime-specific tooling |
+| **Contract Testing** | `skills/engineer/contract-testing/` | Consumer-driven contract testing with Pact to decouple service teams |
+| **Database Optimization** | `skills/engineer/database-optimization/` | EXPLAIN ANALYZE, index strategy, N+1 fixes, keyset pagination, slow query analysis |
+| **Chaos Engineering** | `skills/engineer/chaos-engineering/` | GameDay planning, steady-state hypothesis, blast-radius controlled fault injection |
 
 ### 🧑‍💼 Engineering Manager Skills
 
@@ -143,6 +148,11 @@ Skills work across monoliths, modular monoliths, and distributed/microservice ar
 | **Roadmap Prioritization** | `skills/manager/roadmap-prioritization/` | RICE/ICE scoring + dependency mapping for quarterly planning |
 | **Sprint Retrospective** | `skills/manager/sprint-retrospective/` | Facilitate retros, analyze themes with AI, create tracked action items |
 | **Story Slicing** | `skills/manager/story-slicing/` | Slice epics into vertical slices; agent-native work breakdown, story enhancement, edge case generation, dependency detection, NL→JQL, and point estimation |
+| **Technical Strategy** | `skills/manager/technical-strategy/` | Diagnosis → guiding policies → coherent actions; strategy doc and communication templates |
+| **1:1 Coaching** | `skills/manager/one-on-one-coaching/` | GROW model coaching, SBI feedback, career conversations, question banks by scenario |
+| **Engineer Onboarding** | `skills/manager/engineer-onboarding/` | 30/60/90 day plan, pre-day-1 checklist, time-to-first-PR metrics, ramp-up strategy |
+| **OKR Alignment** | `skills/manager/okr-engineering-alignment/` | Outcome-based OKRs, DORA metrics as Key Results, output-vs-outcome conversion |
+| **Vendor Evaluation** | `skills/manager/vendor-evaluation/` | Build vs. buy matrix, evaluation scorecard, TCO worksheet, contract red flags |
 
 ### 🔀 Cross-Cutting Skills
 
@@ -158,6 +168,10 @@ Skills work across monoliths, modular monoliths, and distributed/microservice ar
 | **Agent Quality Patterns** | `skills/cross-cutting/agent-quality-patterns/` | Self-critique loops, evaluator-optimizer, LLM-as-judge, golden dataset evals |
 | **MCP Safety Review** | `skills/cross-cutting/mcp-safety-review/` | Evaluate an MCP's outbound requests, blast radius, prompt injection risk, secrets handling, and sandbox validation |
 | **Jira Intelligence** | `skills/cross-cutting/jira-intelligence/` | Agent-native Jira AI — work breakdown, story enhancement, comment summary, edge cases, dependency detection, point estimation, NL→JQL |
+| **Context Engineering** | `skills/cross-cutting/context-engineering/` | Structure CLAUDE.md/AGENTS.md context files; optimize what agents know, when, and how |
+| **Platform Engineering** | `skills/cross-cutting/platform-engineering/` | IDP maturity model, golden paths, platform-as-product, paved road charter, KPI dashboard |
+| **SLO/SLA Management** | `skills/cross-cutting/slo-sla-management/` | SLI/SLO/SLA definitions, error budget calculation, burn rate alerts, ship-or-freeze guide |
+| **Developer Experience** | `skills/cross-cutting/developer-experience/` | SPACE framework, inner/outer loop audit, DX backlog prioritization, toolchain scoring |
 
 ---
 

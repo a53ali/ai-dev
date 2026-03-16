@@ -79,6 +79,10 @@ skills_engineer=(
   "skills/engineer/database-migration"
   "skills/engineer/pair-programming"
   "skills/engineer/documentation"
+  "skills/engineer/performance-optimization"
+  "skills/engineer/contract-testing"
+  "skills/engineer/database-optimization"
+  "skills/engineer/chaos-engineering"
 )
 
 skills_manager=(
@@ -93,6 +97,11 @@ skills_manager=(
   "skills/manager/roadmap-prioritization"
   "skills/manager/sprint-retrospective"
   "skills/manager/story-slicing"
+  "skills/manager/technical-strategy"
+  "skills/manager/one-on-one-coaching"
+  "skills/manager/engineer-onboarding"
+  "skills/manager/okr-engineering-alignment"
+  "skills/manager/vendor-evaluation"
 )
 
 skills_planning=(
@@ -115,6 +124,10 @@ skills_cross_cutting=(
   "skills/cross-cutting/agent-quality-patterns"
   "skills/cross-cutting/mcp-safety-review"
   "skills/cross-cutting/jira-intelligence"
+  "skills/cross-cutting/context-engineering"
+  "skills/cross-cutting/platform-engineering"
+  "skills/cross-cutting/slo-sla-management"
+  "skills/cross-cutting/developer-experience"
 )
 
 skills_qa=(
@@ -122,10 +135,12 @@ skills_qa=(
   "skills/qa/bug-reporting"
   "skills/qa/acceptance-criteria"
   "skills/qa/exploratory-testing"
+  "skills/qa/accessibility-testing"
   "skills/engineer/test-driven-development"
   "skills/engineer/security-review"
   "skills/cross-cutting/agent-quality-patterns"
   "skills/cross-cutting/ci-cd-pipeline-analysis"
+  "skills/cross-cutting/jira-intelligence"
 )
 
 skills_all=(
@@ -136,6 +151,7 @@ skills_all=(
   "skills/qa/bug-reporting"
   "skills/qa/acceptance-criteria"
   "skills/qa/exploratory-testing"
+  "skills/qa/accessibility-testing"
 )
 
 case "$PROFILE" in
