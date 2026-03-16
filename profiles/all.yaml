@@ -1,6 +1,6 @@
 # All — every skill in the library
 name: all
-description: The complete skills library — all 36 skills
+description: The complete skills library — all 37 skills
 skills:
   # Engineer
   - skills/engineer/refactoring
@@ -37,6 +37,7 @@ skills:
   - skills/cross-cutting/ci-cd-pipeline-analysis
   - skills/cross-cutting/agent-quality-patterns
   - skills/cross-cutting/mcp-safety-review
+  - skills/cross-cutting/jira-intelligence
   # QA
   - skills/qa/test-strategy
   - skills/qa/bug-reporting

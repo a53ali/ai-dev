@@ -1,7 +1,7 @@
 ---
 name: incident-retrospective
 description: Run a structured blameless post-mortem after an incident
-triggers: [retrospective, postmortem, post-mortem, incident review, blameless, outage review, RCA, root cause]
+triggers: [postmortem, post-mortem, incident review, blameless, outage review, RCA, root cause, incident post-mortem]
 audience: manager
 ---
 
