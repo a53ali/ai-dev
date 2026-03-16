@@ -1,0 +1,74 @@
+# Validates all SKILL.md files against the Agent Skills specification.
+# Inspired by: https://github.com/marketplace/actions/validate-skill
+#
+# Runs on every push and pull request. Each skill directory is validated
+# independently so a single bad skill doesn't hide others.
+
+name: Validate Skills
+
+on:
+  push:
+    paths:
+      - "skills/**"
+  pull_request:
+    paths:
+      - "skills/**"
+  workflow_dispatch:
+
+jobs:
+  discover:
+    name: Discover skill directories
+    runs-on: ubuntu-latest
+    outputs:
+      skills: ${{ steps.find.outputs.skills }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Find all skill directories
+        id: find
+        run: |
+          # Collect every directory that contains a SKILL.md
+          skills=$(find skills -name "SKILL.md" -exec dirname {} \; | sort | jq -R -s -c 'split("\n") | map(select(length > 0))')
+          echo "skills=$skills" >> "$GITHUB_OUTPUT"
+          echo "Found $(echo "$skills" | jq length) skill(s)"
+
+  validate:
+    name: Validate — ${{ matrix.skill }}
+    needs: discover
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false          # validate ALL skills, don't stop on first failure
+      matrix:
+        skill: ${{ fromJson(needs.discover.outputs.skills) }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate ${{ matrix.skill }}
+        id: validate
+        uses: Flash-Brew-Digital/validate-skill@v1
+        with:
+          path: ${{ matrix.skill }}
+          fail-on-warning: "false"
+          validate-references: "false"
+
+      - name: Print results
+        if: always()
+        run: |
+          echo "Valid: ${{ steps.validate.outputs.valid }}"
+          echo "Errors: ${{ steps.validate.outputs.errors }}"
+          echo "Warnings: ${{ steps.validate.outputs.warnings }}"
+
+  summary:
+    name: Validation summary
+    needs: validate
+    runs-on: ubuntu-latest
+    if: always()
+    steps:
+      - name: All skills valid?
+        run: |
+          if [ "${{ needs.validate.result }}" = "success" ]; then
+            echo "✅ All skills passed validation"
+          else
+            echo "❌ One or more skills failed validation — check the matrix jobs above"
+            exit 1
+          fi
