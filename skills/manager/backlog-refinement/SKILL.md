@@ -140,3 +140,33 @@ When applying this skill, the agent should:
 - Recommend a story point estimate and explain the reasoning
 - Flag stories that are too large and suggest how to split them
 - Generate a refined, sprint-ready version of the item
+
+## MCP Integration
+
+When Jira MCP and Confluence MCP are configured, use them to ground refinement in real data.
+
+**Fetch stories from Jira for refinement:**
+```
+jira_search_issues(jql: "project = PROJ AND sprint in openSprints() AND status = 'Backlog' ORDER BY rank ASC", max_results: 10)
+```
+
+**Read the linked spec or requirements from Confluence:**
+```
+confluence_get_page(page_id: "<linked_page_id>")
+```
+Or search by title:
+```
+confluence_search(query: "feature spec <story_summary>", limit: 3)
+```
+
+**Update the Jira story with refined acceptance criteria:**
+```
+jira_update_issue(issue_key: "PROJ-123", fields: { description: "<refined_description>", story_points: 5 })
+```
+
+**Split a large story by creating child issues:**
+```
+jira_create_issue(project: "PROJ", issue_type: "Story", summary: "<sub-story title>", description: "<AC>", parent: "PROJ-123")
+```
+
+**Graceful fallback:** If MCP is not configured, output the refined story as structured Markdown — ready to paste into Jira or Confluence manually.

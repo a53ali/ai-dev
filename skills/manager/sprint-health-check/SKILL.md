@@ -186,3 +186,28 @@ Thresholds:
 - Henrik Kniberg: [Scrum and XP from the Trenches](https://www.infoq.com/minibooks/scrum-xp-from-the-trenches-2/)
 - LeadDev: [Sprint anti-patterns](https://leaddev.com/agile-other-ways-working)
 - Daniel Vacanti: *Actionable Agile Metrics* (WIP and flow)
+
+## MCP Integration
+
+**Query in-progress items and their age:**
+```
+jira_search_issues(jql: "project = PROJ AND sprint in openSprints() AND status in ('In Progress', 'In Review') ORDER BY updated ASC")
+```
+
+**Count total sprint scope and completed items:**
+```
+jira_search_issues(jql: "project = PROJ AND sprint in openSprints()")
+jira_search_issues(jql: "project = PROJ AND sprint in openSprints() AND status = Done")
+```
+
+**Identify blocked items:**
+```
+jira_search_issues(jql: "project = PROJ AND sprint in openSprints() AND labels = 'blocked'")
+```
+
+**Pull sprint details (dates, goal):**
+```
+jira_get_issue(issue_key: "PROJ-sprint-board")  -- or query via sprint boards if available
+```
+
+**Graceful fallback:** Ask the team to paste the sprint board snapshot (stories, statuses, remaining days) as plain text. Apply the same Sprint Health Score analysis to the text input.

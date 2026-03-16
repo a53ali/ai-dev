@@ -265,3 +265,27 @@ Review it against the current code/config and:
 - Martin Fowler: [Sacrificial Architecture](https://martinfowler.com/bliki/SacrificialArchitecture.html) (on the value of documenting decisions)
 - [Write the Docs](https://www.writethedocs.org/guide/)
 - LeadDev: [Making documentation a team habit](https://leaddev.com/documentation)
+
+## MCP Integration
+
+**Search Confluence for existing documentation to update:**
+```
+confluence_search(query: "<component or feature name> documentation", space_key: "ENG", limit: 5)
+```
+
+**Read an existing page before updating:**
+```
+confluence_get_page(page_id: "<page_id>")
+```
+
+**Create a new documentation page:**
+```
+confluence_create_page(space_key: "ENG", title: "<Component> — <Doc Type>", content: "<structured documentation content>", parent_page_id: "<docs_section_page_id>")
+```
+
+**Update an existing page (tutorials, how-tos, references):**
+```
+confluence_update_page(page_id: "<page_id>", title: "<same or updated title>", content: "<updated content with version note>")
+```
+
+**Graceful fallback:** Output documentation as Markdown with a recommended Confluence page title and parent page path. Include `> 📄 Paste into Confluence > <Space> > <Parent Page>` at the top.

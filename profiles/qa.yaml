@@ -1,0 +1,13 @@
+# QA — skills for quality assurance engineers and SDETs
+name: qa
+description: Full set of skills for QA engineers, SDETs, and quality-focused engineers
+skills:
+  - skills/qa/test-strategy
+  - skills/qa/bug-reporting
+  - skills/qa/acceptance-criteria
+  - skills/qa/exploratory-testing
+  # Cross-cutting skills with strong QA relevance
+  - skills/engineer/test-driven-development
+  - skills/engineer/security-review
+  - skills/cross-cutting/agent-quality-patterns
+  - skills/cross-cutting/ci-cd-pipeline-analysis

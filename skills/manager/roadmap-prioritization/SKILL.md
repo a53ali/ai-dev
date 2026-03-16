@@ -192,3 +192,28 @@ This positions you as decision-enabler, not gatekeeper.
 - Marty Cagan: *Inspired* (outcome-driven roadmaps)
 - LeadDev: [Engineering roadmaps that make sense to stakeholders](https://leaddev.com/roadmapping)
 - Will Larson: *An Elegant Puzzle* — on sequencing technical investments
+
+## MCP Integration
+
+**Query epics and initiatives from Jira:**
+```
+jira_search_issues(jql: "project = PROJ AND issuetype = Epic AND status != Done ORDER BY rank ASC")
+```
+
+**Read the current roadmap or strategy doc from Confluence:**
+```
+confluence_search(query: "engineering roadmap Q<N> <year>", limit: 5)
+confluence_get_page(page_id: "<roadmap_page_id>")
+```
+
+**Create new planned epics from prioritization output:**
+```
+jira_create_issue(project: "PROJ", issue_type: "Epic", summary: "<Initiative title>", description: "<RICE score, rationale, success metrics>", labels: ["roadmap"])
+```
+
+**Write the updated roadmap to Confluence:**
+```
+confluence_update_page(page_id: "<roadmap_page_id>", title: "Engineering Roadmap — <Quarter>", content: "<updated roadmap with RICE scores and sequencing>")
+```
+
+**Graceful fallback:** Output the prioritized roadmap table as Markdown with RICE scores — ready to paste into Confluence and link from the relevant Jira epic.

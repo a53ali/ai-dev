@@ -78,3 +78,27 @@ When applying this skill, the agent should:
 - Sort by priority score
 - Produce business-language framing for the top 3 items ready for stakeholder communication
 - Suggest a capacity allocation model for the team's current situation
+
+## MCP Integration
+
+**Query existing tech debt tickets:**
+```
+jira_search_issues(jql: "project = PROJ AND labels = 'tech-debt' AND status != Done ORDER BY priority DESC")
+```
+
+**Create new tech debt tickets from the debt inventory:**
+```
+jira_create_issue(project: "PROJ", issue_type: "Tech Debt", summary: "<debt item title>", description: "<quadrant, priority score, business impact, effort estimate>", labels: ["tech-debt"], priority: "<High|Medium|Low>")
+```
+
+**Link debt items to the affected epics:**
+```
+jira_create_issue_link(inward_issue: "PROJ-debt", outward_issue: "PROJ-epic", link_type: "relates to")
+```
+
+**Document the debt decisions in Confluence:**
+```
+confluence_create_page(space_key: "ENG", title: "Technical Debt Register — <Quarter>", content: "<debt inventory with quadrant, scores, and capacity allocation plan>", parent_page_id: "<architecture_page_id>")
+```
+
+**Graceful fallback:** Output the scored debt register as a Markdown table — suitable for pasting into a Confluence page or converting to Jira tickets.

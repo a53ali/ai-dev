@@ -96,3 +96,31 @@ When applying this skill, the agent should:
 - Reconstruct the timeline from logs/alerts if available
 - Surface contributing factors beyond the immediate root cause
 - Generate specific, actionable action items with suggested owners and priority
+
+## MCP Integration
+
+**Read the incident ticket from Jira for timeline and impact data:**
+```
+jira_get_issue(issue_key: "INC-456")
+```
+
+**Search for related incidents to identify repeat patterns:**
+```
+jira_search_issues(jql: "project = INC AND labels = 'incident' AND created >= -90d ORDER BY created DESC")
+```
+
+**Create follow-up action items in Jira:**
+```
+jira_create_issue(project: "PROJ", issue_type: "Task", summary: "Post-mortem action: <action>", description: "<what, owner, deadline, success criteria>", labels: ["post-mortem"], priority: "High")
+```
+Link the action back to the incident:
+```
+jira_create_issue_link(inward_issue: "INC-456", outward_issue: "PROJ-789", link_type: "is blocked by")
+```
+
+**Publish the post-mortem to Confluence:**
+```
+confluence_create_page(space_key: "ENG", title: "Post-Mortem: <Incident Title> (<Date>)", content: "<filled post-mortem template>", parent_page_id: "<post_mortems_page_id>")
+```
+
+**Graceful fallback:** Output the post-mortem as structured Markdown — ready to copy into Confluence. List action items with PROJ ticket format for manual creation.

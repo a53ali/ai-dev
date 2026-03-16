@@ -168,3 +168,27 @@ After your shift ends:
 - Google SRE Book: [Chapter 12 — Effective Oncall](https://sre.google/sre-book/being-on-call/)
 - PagerDuty: [On-Call Best Practices](https://www.pagerduty.com/resources/learn/on-call-management/)
 - LeadDev: [Sustainable on-call practices](https://leaddev.com/on-call)
+
+## MCP Integration
+
+**Query open and in-progress incidents from Jira:**
+```
+jira_search_issues(jql: "project = INC AND status in ('Open', 'In Progress') ORDER BY priority DESC, created ASC")
+```
+
+**Read known-issue tickets linked to current incidents:**
+```
+jira_get_issue(issue_key: "INC-<id>")
+```
+
+**Search for the current runbook in Confluence:**
+```
+confluence_search(query: "runbook <service_name>", space_key: "OPS", limit: 3)
+```
+
+**Write the handoff document to Confluence:**
+```
+confluence_create_page(space_key: "OPS", title: "On-Call Handoff — <Date> (<Outgoing> → <Incoming>)", content: "<formatted handoff document>", parent_page_id: "<on_call_logs_page_id>")
+```
+
+**Graceful fallback:** Output the handoff document as Markdown with a message: `> 📋 Paste into Confluence > OPS > On-Call Logs > <Date>`.

@@ -29,9 +29,10 @@ for arg in "$@"; do
       echo "  recommended   Starter set (skill-router, refactoring, code-review, debugging, tdd, backlog-refinement, observability)"
       echo "  engineer      All 12 engineer / IC skills"
       echo "  manager       All 10 engineering manager skills"
+      echo "  qa            All 4 QA skills + relevant cross-cutting (test-strategy, bug-reporting, AC, exploratory)"
       echo "  planning      Planning-focused skills (tdd, adr, backlog, flow-metrics, sprint-health, roadmap)"
-      echo "  cross-cutting All 8 cross-cutting skills (skill-router, strangler-fig, observability, team-topology, events, monolith, ci-cd, agent-quality)"
-      echo "  all           All 30 skills"
+      echo "  cross-cutting All 8 cross-cutting skills"
+      echo "  all           All 34 skills"
       echo ""
       echo "Agents:"
       echo "  claude    → ~/.claude/skills/   (Claude Code, agentskills.io format)"
@@ -113,10 +114,25 @@ skills_cross_cutting=(
   "skills/cross-cutting/agent-quality-patterns"
 )
 
+skills_qa=(
+  "skills/qa/test-strategy"
+  "skills/qa/bug-reporting"
+  "skills/qa/acceptance-criteria"
+  "skills/qa/exploratory-testing"
+  "skills/engineer/test-driven-development"
+  "skills/engineer/security-review"
+  "skills/cross-cutting/agent-quality-patterns"
+  "skills/cross-cutting/ci-cd-pipeline-analysis"
+)
+
 skills_all=(
   "${skills_engineer[@]}"
   "${skills_manager[@]}"
   "${skills_cross_cutting[@]}"
+  "skills/qa/test-strategy"
+  "skills/qa/bug-reporting"
+  "skills/qa/acceptance-criteria"
+  "skills/qa/exploratory-testing"
 )
 
 case "$PROFILE" in
@@ -125,9 +141,10 @@ case "$PROFILE" in
   manager)       skills=("${skills_manager[@]}") ;;
   planning)      skills=("${skills_planning[@]}") ;;
   cross-cutting) skills=("${skills_cross_cutting[@]}") ;;
+  qa)            skills=("${skills_qa[@]}") ;;
   all)           skills=("${skills_all[@]}") ;;
   *)
-    echo "Unknown profile: $PROFILE. Choose from: recommended, engineer, manager, planning, cross-cutting, all"
+    echo "Unknown profile: $PROFILE. Choose from: recommended, engineer, manager, planning, cross-cutting, qa, all"
     exit 1
     ;;
 esac

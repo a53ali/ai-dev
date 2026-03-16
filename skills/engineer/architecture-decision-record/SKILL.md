@@ -77,3 +77,27 @@ When applying this skill, the agent should:
 - Generate the filled-in ADR template for new decisions
 - Suggest the next sequential number based on existing ADRs
 - For queries, quote the relevant decision and consequences from the matching ADR
+
+## MCP Integration
+
+**Search existing ADRs in Confluence:**
+```
+confluence_search(query: "ADR <topic>", space_key: "ENG", limit: 5)
+```
+
+**Read an existing ADR for context or superseding:**
+```
+confluence_get_page(page_id: "<adr_page_id>")
+```
+
+**Publish a new ADR to Confluence:**
+```
+confluence_create_page(space_key: "ENG", title: "ADR-<NNN>: <Decision Title>", content: "<filled ADR template>", parent_page_id: "<adrs_page_id>")
+```
+
+**Link the ADR to the relevant Jira epic:**
+```
+jira_update_issue(issue_key: "PROJ-epic", fields: { description: "<existing description>\n\n**ADR:** [ADR-NNN](<confluence_url>)" })
+```
+
+**Graceful fallback:** Output the completed ADR as Markdown — ready to paste into Confluence. Include the Confluence page structure (title, parent page suggestion) as a comment.

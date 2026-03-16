@@ -229,3 +229,29 @@ Each person: one word describing the sprint + one thing to change. Facilitator s
 - Martin Fowler: [Retrospective Prime Directive](https://martinfowler.com/bliki/RetrospectivePrimeDirective.html)
 - LeadDev: [Running retrospectives that actually lead to change](https://leaddev.com/agile-other-ways-working)
 - [retromat.org](https://retromat.org) — 100+ retrospective activities
+
+## MCP Integration
+
+When Jira MCP and Confluence MCP are configured, close the loop between retro insights and team execution.
+
+**Query completed sprint stories to ground the retrospective in data:**
+```
+jira_search_issues(jql: "project = PROJ AND sprint in closedSprints() AND sprint = '<sprint_name>'", max_results: 50)
+```
+
+**Create action items as Jira tickets:**
+```
+jira_create_issue(project: "PROJ", issue_type: "Task", summary: "Retro action: <action>", description: "<what, why, success criteria>", assignee: "<owner_username>", labels: ["retro-action"])
+```
+
+**Write the retrospective outcomes to Confluence:**
+```
+confluence_create_page(space_key: "TEAM", title: "<Sprint N> Retrospective", content: "<formatted retro summary with themes and actions>", parent_page_id: "<retros_page_id>")
+```
+
+**Check previous retro action items for carry-overs:**
+```
+jira_search_issues(jql: "labels = 'retro-action' AND status != Done AND project = PROJ")
+```
+
+**Graceful fallback:** Produce the retrospective summary and action items as Markdown; instruct the team to paste into Confluence and create Jira tickets manually.

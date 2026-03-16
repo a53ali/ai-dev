@@ -54,6 +54,16 @@ Describe your problem in plain language. The router will:
 | Production incident | `incident-retrospective` → `observability` → `on-call-handoff` |
 | Hard to debug | `debugging` → `observability` |
 
+### QA / Quality Engineering
+| Trigger | Skills |
+|---|---|
+| Writing a test strategy for a feature or release | `test-strategy` → `acceptance-criteria` → `test-driven-development` |
+| Bug found — need a high-quality report | `bug-reporting` → `acceptance-criteria` |
+| Exploring edge cases / finding what scripted tests miss | `exploratory-testing` → `bug-reporting` |
+| Deciding what acceptance criteria to put on a story | `acceptance-criteria` → `backlog-refinement` |
+| Setting up or reviewing the test pipeline | `ci-cd-pipeline-analysis` → `test-strategy` |
+| AI/LLM test automation quality | `agent-quality-patterns` → `test-strategy` |
+
 ### People & Teams
 | Trigger | Skills |
 |---|---|

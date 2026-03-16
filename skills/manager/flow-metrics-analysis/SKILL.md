@@ -178,3 +178,27 @@ When applying this skill, the agent should:
 6. Connect findings to DORA metric implications
 7. Produce the Team Flow Summary report
 8. Generate 3 prioritized, specific improvement recommendations
+
+## MCP Integration
+
+**Pull cycle time data via Jira JQL:**
+```
+jira_search_issues(jql: "project = PROJ AND issuetype in (Story, Bug) AND status changed to Done after '<start_date>' ORDER BY resolutiondate ASC", max_results: 100)
+```
+
+**Get age of in-progress items (WIP age):**
+```
+jira_search_issues(jql: "project = PROJ AND status in ('In Progress', 'In Review') ORDER BY updated ASC")
+```
+
+**Calculate throughput for the last N sprints:**
+```
+jira_search_issues(jql: "project = PROJ AND sprint in closedSprints() AND status = Done AND sprint in sprintsInDateRange('<start_date>', '<end_date>')")
+```
+
+**Publish the Team Flow Summary report to Confluence:**
+```
+confluence_create_page(space_key: "TEAM", title: "Flow Metrics Report — <Month/Quarter>", content: "<team flow summary with charts and recommendations>", parent_page_id: "<metrics_page_id>")
+```
+
+**Graceful fallback:** Ask the user to provide CSV/JSON export from Jira. Parse timestamps manually and produce the flow metrics report as Markdown.

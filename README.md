@@ -1,6 +1,6 @@
 # ai-dev — Skills Library for Engineers & Engineering Managers
 
-A curated set of **30 AI agent skills** for engineers and engineering managers. Works with **Claude Code**, **Codex CLI**, and **GitHub Copilot CLI**. Language-agnostic, grounded in industry-proven principles.
+A curated set of **34 AI agent skills** for engineers, QA engineers, and engineering managers. Works with **Claude Code**, **Codex CLI**, and **GitHub Copilot CLI**. Language-agnostic, grounded in industry-proven principles.
 
 ---
 
@@ -10,7 +10,6 @@ A curated set of **30 AI agent skills** for engineers and engineering managers. 
 
 **Claude Code**
 ```bash
-# Recommended starter set
 curl -fsSL https://raw.githubusercontent.com/a53ali/ai-dev/main/install.sh | bash -s -- --profile=recommended --agent=claude
 
 # Engineer skills
@@ -18,6 +17,9 @@ curl -fsSL https://raw.githubusercontent.com/a53ali/ai-dev/main/install.sh | bas
 
 # Manager skills
 curl -fsSL https://raw.githubusercontent.com/a53ali/ai-dev/main/install.sh | bash -s -- --profile=manager --agent=claude
+
+# QA skills
+curl -fsSL https://raw.githubusercontent.com/a53ali/ai-dev/main/install.sh | bash -s -- --profile=qa --agent=claude
 ```
 
 **Codex CLI**
@@ -66,9 +68,10 @@ cd ai-dev
 | `recommended` | skill-router, refactoring, code-review, debugging, tdd, backlog-refinement, observability | Anyone — start here |
 | `engineer` | All 12 engineer skills | ICs and senior engineers |
 | `manager` | All 10 manager skills | EMs, tech leads, staff+ |
+| `qa` | test-strategy, bug-reporting, acceptance-criteria, exploratory-testing + 4 cross-cutting | QA engineers and SDETs |
 | `planning` | tdd, adr, backlog-refinement, flow-metrics, sprint-health, roadmap | Sprint planning and delivery |
 | `cross-cutting` | skill-router, strangler-fig, observability, team-topology, event-driven, monolith-to-services, ci-cd, agent-quality | Architecture and platform work |
-| `all` | All 30 skills | Full library |
+| `all` | All 34 skills | Full library |
 
 ---
 
@@ -105,6 +108,15 @@ Skills work across monoliths, modular monoliths, and distributed/microservice ar
 ---
 
 ## Skill Index
+
+### 🧪 QA / Quality Engineer Skills
+
+| Skill | Path | When to Use |
+|-------|------|-------------|
+| **Test Strategy** | `skills/qa/test-strategy/` | Define what to test, at which layer, with risk-based prioritization |
+| **Bug Reporting** | `skills/qa/bug-reporting/` | Write reproducible, high-quality bug reports with severity/priority rubric |
+| **Acceptance Criteria** | `skills/qa/acceptance-criteria/` | Given/When/Then scenarios, Definition of Ready, Definition of Done |
+| **Exploratory Testing** | `skills/qa/exploratory-testing/` | Test charters, SBTM, heuristics for finding what scripted tests miss |
 
 ### 🧭 Start Here
 
