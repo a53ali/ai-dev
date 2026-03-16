@@ -28,7 +28,7 @@ for arg in "$@"; do
       echo "Profiles:"
       echo "  recommended   Starter set (skill-router, refactoring, code-review, debugging, tdd, backlog-refinement, observability)"
       echo "  engineer      All 12 engineer / IC skills"
-      echo "  manager       All 9 engineering manager skills"
+      echo "  manager       All 10 engineering manager skills"
       echo "  planning      Planning-focused skills (tdd, adr, backlog, flow-metrics, sprint-health, roadmap)"
       echo "  cross-cutting All 7 cross-cutting skills (skill-router, strangler-fig, observability, team-topology, events, monolith, ci-cd)"
       echo "  all           All 28 skills"
@@ -90,6 +90,7 @@ skills_manager=(
   "skills/manager/hiring-leveling"
   "skills/manager/sprint-health-check"
   "skills/manager/roadmap-prioritization"
+  "skills/manager/sprint-retrospective"
 )
 
 skills_planning=(

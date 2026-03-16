@@ -1,6 +1,6 @@
 # All — every skill in the library
 name: all
-description: The complete skills library — all 28 skills
+description: The complete skills library — all 29 skills
 skills:
   # Engineer
   - skills/engineer/refactoring
@@ -25,6 +25,7 @@ skills:
   - skills/manager/hiring-leveling
   - skills/manager/sprint-health-check
   - skills/manager/roadmap-prioritization
+  - skills/manager/sprint-retrospective
   # Cross-cutting
   - skills/cross-cutting/strangler-fig
   - skills/cross-cutting/observability

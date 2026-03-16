@@ -34,6 +34,7 @@ Describe your problem in plain language. The router will:
 | PRs take too long | `code-review` → `pair-programming` → `flow-metrics-analysis` |
 | Deployment is risky | `continuous-delivery` → `feature-flags` → `observability` |
 | Work piles up mid-sprint | `sprint-health-check` → `flow-metrics-analysis` → `backlog-refinement` |
+| End of sprint reflection | `sprint-retrospective` → `flow-metrics-analysis` |
 
 ### Architecture & Design
 | Trigger | Skills |

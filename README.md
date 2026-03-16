@@ -1,6 +1,6 @@
 # ai-dev — Skills Library for Engineers & Engineering Managers
 
-A curated set of **28 AI agent skills** for engineers and engineering managers. Works with **Claude Code**, **Codex CLI**, and **GitHub Copilot CLI**. Language-agnostic, grounded in industry-proven principles.
+A curated set of **29 AI agent skills** for engineers and engineering managers. Works with **Claude Code**, **Codex CLI**, and **GitHub Copilot CLI**. Language-agnostic, grounded in industry-proven principles.
 
 ---
 
@@ -65,7 +65,7 @@ cd ai-dev
 |---------|--------|----------|
 | `recommended` | skill-router, refactoring, code-review, debugging, tdd, backlog-refinement, observability | Anyone — start here |
 | `engineer` | All 12 engineer skills | ICs and senior engineers |
-| `manager` | All 9 manager skills | EMs, tech leads, staff+ |
+| `manager` | All 10 manager skills | EMs, tech leads, staff+ |
 | `planning` | tdd, adr, backlog-refinement, flow-metrics, sprint-health, roadmap | Sprint planning and delivery |
 | `cross-cutting` | skill-router, strangler-fig, observability, team-topology, event-driven, monolith-to-services, ci-cd | Architecture and platform work |
 | `all` | All 28 skills | Full library |
@@ -142,6 +142,7 @@ Skills work across monoliths, modular monoliths, and distributed/microservice ar
 | **Hiring & Leveling** | `skills/manager/hiring-leveling/` | Rubric-based IC leveling for hiring and promotions |
 | **Sprint Health Check** | `skills/manager/sprint-health-check/` | Mid-sprint signal reading for scope, progress, blockers, morale |
 | **Roadmap Prioritization** | `skills/manager/roadmap-prioritization/` | RICE/ICE scoring + dependency mapping for quarterly planning |
+| **Sprint Retrospective** | `skills/manager/sprint-retrospective/` | Facilitate retros, analyze themes with AI, create tracked action items |
 
 ### 🔀 Cross-Cutting Skills
 
