@@ -1,0 +1,43 @@
+{
+  "_readme": "GitHub MCP server — already bundled with GitHub Copilot CLI. For Claude Code and Codex CLI, install separately.",
+  "_docs": "https://github.com/github/github-mcp-server",
+  "mcpServers": {
+    "github": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_TOKEN}"
+      }
+    }
+  },
+  "_setup": {
+    "1_get_token": "https://github.com/settings/tokens/new (fine-grained PAT)",
+    "2_scopes_needed": [
+      "repo — read/write repos, issues, PRs",
+      "read:user — user profile info",
+      "read:org — org membership (if needed)"
+    ],
+    "3_set_env": [
+      "export GITHUB_TOKEN=ghp_your_token_here"
+    ],
+    "4_copilot_cli_note": "GitHub Copilot CLI already includes the GitHub MCP server — no extra setup needed."
+  },
+  "_tools_provided": [
+    "search_repositories — find repos by name, topic, language",
+    "get_file_contents — read a file from any repo",
+    "list_issues — list and filter issues",
+    "create_issue — create a GitHub issue",
+    "get_pull_request — fetch PR details and diff",
+    "list_pull_requests — list open/closed PRs",
+    "create_pull_request — open a PR programmatically",
+    "list_commits — get commit history for a branch",
+    "search_code — search across all repos",
+    "list_workflow_runs — check CI status"
+  ],
+  "_skill_pairings": [
+    "skills/engineer/code-review — uses get_pull_request + get_file_contents",
+    "skills/engineer/continuous-delivery — uses list_workflow_runs to diagnose CI",
+    "skills/cross-cutting/ci-cd-pipeline-analysis — uses workflow run data",
+    "skills/manager/engineering-metrics — uses commit and PR data for DORA metrics"
+  ]
+}

@@ -36,7 +36,7 @@ for arg in "$@"; do
       echo ""
       echo "Agents:"
       echo "  claude    → ~/.claude/skills/   (Claude Code, agentskills.io format)"
-      echo "  codex     → ~/.agents/skills/   (Codex CLI, agentskills.io format)"
+      echo "  codex     → ~/.codex/skills/    (Codex CLI, agentskills.io format)"
       echo "  copilot   → ~/.copilot/skills/  (GitHub Copilot CLI, flat .md format)"
       exit 0
       ;;
@@ -47,7 +47,7 @@ done
 # ── Resolve install destination ───────────────────────────────────────────────
 case "$AGENT" in
   claude)  DEST="$HOME/.claude/skills" ;;
-  codex)   DEST="$HOME/.agents/skills" ;;
+  codex)   DEST="$HOME/.codex/skills" ;;
   copilot) DEST="$HOME/.copilot/skills" ;;
   *)
     echo "Unknown agent: $AGENT. Choose from: claude, codex, copilot"

@@ -1,0 +1,41 @@
+{
+  "_readme": "Confluence MCP server configuration. Store credentials in environment variables.",
+  "_docs": "https://github.com/anthropics/anthropic-mcp-servers/tree/main/confluence",
+  "mcpServers": {
+    "confluence": {
+      "command": "npx",
+      "args": ["-y", "@anthropic-ai/mcp-server-confluence"],
+      "env": {
+        "CONFLUENCE_URL": "${CONFLUENCE_URL}",
+        "CONFLUENCE_EMAIL": "${CONFLUENCE_EMAIL}",
+        "CONFLUENCE_API_TOKEN": "${CONFLUENCE_API_TOKEN}"
+      }
+    }
+  },
+  "_setup": {
+    "1_get_token": "https://id.atlassian.com/manage-profile/security/api-tokens",
+    "2_set_env": [
+      "export CONFLUENCE_URL=https://your-org.atlassian.net/wiki",
+      "export CONFLUENCE_EMAIL=you@company.com",
+      "export CONFLUENCE_API_TOKEN=your-api-token"
+    ],
+    "3_note": "Same API token as Jira — both are Atlassian products"
+  },
+  "_tools_provided": [
+    "confluence_search — full-text CQL search across spaces",
+    "confluence_get_page — fetch a page by ID or title + space key",
+    "confluence_create_page — create a new page in a space",
+    "confluence_update_page — update an existing page's content",
+    "confluence_get_spaces — list available spaces",
+    "confluence_get_children — list child pages of a parent",
+    "confluence_add_comment — add an inline or page comment"
+  ],
+  "_skill_pairings": [
+    "skills/manager/incident-retrospective — publishes post-mortems to Confluence",
+    "skills/manager/sprint-retrospective — writes retro outcomes to Confluence",
+    "skills/engineer/architecture-decision-record — publishes ADRs to Confluence",
+    "skills/engineer/documentation — creates/updates runbooks and guides",
+    "skills/manager/technical-strategy — publishes strategy docs",
+    "skills/cross-cutting/context-engineering — reads project context from Confluence"
+  ]
+}

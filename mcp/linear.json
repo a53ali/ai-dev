@@ -1,0 +1,34 @@
+{
+  "_readme": "Linear MCP server configuration. Linear is an alternative to Jira popular with product-led engineering teams.",
+  "_docs": "https://github.com/jerhadf/linear-mcp-server",
+  "mcpServers": {
+    "linear": {
+      "command": "npx",
+      "args": ["-y", "linear-mcp-server"],
+      "env": {
+        "LINEAR_API_KEY": "${LINEAR_API_KEY}"
+      }
+    }
+  },
+  "_setup": {
+    "1_get_token": "Linear → Settings → API → Personal API keys",
+    "2_set_env": [
+      "export LINEAR_API_KEY=lin_api_your_key_here"
+    ]
+  },
+  "_tools_provided": [
+    "linear_get_issue — fetch an issue by ID",
+    "linear_search_issues — search issues by title, status, assignee, or team",
+    "linear_create_issue — create a new issue in a team",
+    "linear_update_issue — update title, description, state, priority, assignee",
+    "linear_get_cycles — list active and upcoming cycles (sprints)",
+    "linear_get_projects — list projects",
+    "linear_get_teams — list teams in the workspace"
+  ],
+  "_skill_pairings": [
+    "skills/manager/backlog-refinement — query and update Linear issues",
+    "skills/manager/sprint-health-check — query current cycle issues",
+    "skills/manager/story-slicing — create child issues from an epic",
+    "skills/manager/engineering-metrics — cycle time data from Linear"
+  ]
+}

@@ -1,0 +1,67 @@
+# Manager Workspace — Context
+
+<!-- Replace UPPERCASE placeholders before use -->
+
+## Who I am
+MANAGER_NAME — ROLE (e.g. Engineering Manager, Staff Engineer, VP Engineering)
+Team: TEAM_NAME
+Organisation: ORG_NAME
+
+## What I work on here
+<!-- What is in this repo/folder? e.g. meeting notes, roadmaps, OKR docs, decision memos -->
+This workspace contains: CONTENTS
+
+## My team
+| Name | Role | Level | Focus |
+|------|------|-------|-------|
+| PERSON | Senior Engineer | L5 | Backend |
+| PERSON | Engineer | L4 | Frontend |
+
+## Current quarter focus
+**Theme:** THEME (e.g. "Reliability & Developer Experience")
+
+OKRs:
+- O1: OBJECTIVE
+  - KR1: METRIC (current: X, target: Y)
+  - KR2: METRIC (current: X, target: Y)
+- O2: OBJECTIVE
+  - KR1: METRIC (current: X, target: Y)
+
+## Recurring meetings
+| Meeting | Cadence | Purpose |
+|---------|---------|---------|
+| 1:1s | Weekly | Coaching, unblocking, career |
+| Team sync | Weekly | Progress, blockers, decisions |
+| Sprint planning | Bi-weekly | Story sizing and sprint commitment |
+| Retrospective | Bi-weekly | Continuous improvement |
+| Skip-levels | Monthly | Direct feedback from team |
+
+## How I use AI here
+- Draft 1:1 prep notes and talking points
+- Write and review OKR language
+- Analyse sprint/flow metrics
+- Draft communication (strategy docs, announcements, RFC feedback)
+- Summarise Jira threads and Confluence pages
+- Review job descriptions and leveling rubrics
+
+## Jira & Confluence
+- **Jira project:** PROJECT_KEY
+- **Team board:** BOARD_URL
+- **Confluence space:** SPACE_KEY
+- **Engineering handbook:** HANDBOOK_URL
+
+## Relevant skills
+- `one-on-one-coaching` — 1:1 prep, GROW model, SBI feedback
+- `sprint-retrospective` — facilitate and summarise retros
+- `engineer-onboarding` — 30/60/90 plans for new hires
+- `okr-engineering-alignment` — writing and reviewing OKRs
+- `technical-strategy` — strategy docs and tech direction
+- `engineering-metrics` — DORA metrics, flow metrics, team health
+- `hiring-leveling` — leveling rubrics, job descriptions
+- `roadmap-prioritization` — quarterly planning, RICE scoring
+
+## Tone & style preferences
+- Direct, no fluff
+- Use tables and bullets over paragraphs
+- Always end meeting docs with "Decisions" and "Actions" sections
+- Date format: ISO 8601 (YYYY-MM-DD)

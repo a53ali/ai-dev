@@ -1,0 +1,45 @@
+{
+  "_readme": "Jira MCP server configuration. Copy relevant sections into your agent's MCP settings. Store credentials in environment variables, never in this file.",
+  "_docs": "https://github.com/anthropics/anthropic-mcp-servers/tree/main/jira",
+  "mcpServers": {
+    "jira": {
+      "command": "npx",
+      "args": ["-y", "@anthropic-ai/mcp-server-jira"],
+      "env": {
+        "JIRA_URL": "${JIRA_URL}",
+        "JIRA_EMAIL": "${JIRA_EMAIL}",
+        "JIRA_API_TOKEN": "${JIRA_API_TOKEN}"
+      }
+    }
+  },
+  "_setup": {
+    "1_get_token": "https://id.atlassian.com/manage-profile/security/api-tokens",
+    "2_set_env": [
+      "export JIRA_URL=https://your-org.atlassian.net",
+      "export JIRA_EMAIL=you@company.com",
+      "export JIRA_API_TOKEN=your-api-token"
+    ],
+    "3_scopes_needed": [
+      "read:jira-work",
+      "write:jira-work",
+      "read:jira-user"
+    ]
+  },
+  "_tools_provided": [
+    "jira_get_issue — fetch a single issue by key (e.g. PROJ-123)",
+    "jira_search_issues — JQL search (e.g. project=PROJ AND sprint in openSprints())",
+    "jira_create_issue — create a new story, bug, task, or epic",
+    "jira_update_issue — update fields: summary, description, assignee, status, labels",
+    "jira_transition_issue — move issue through workflow (e.g. In Progress → Done)",
+    "jira_add_comment — add a comment to an issue",
+    "jira_get_sprints — list sprints for a board",
+    "jira_get_board — get board configuration"
+  ],
+  "_skill_pairings": [
+    "skills/cross-cutting/jira-intelligence — AI-native Jira commands powered by this MCP",
+    "skills/manager/story-slicing — uses jira_create_issue to create child stories",
+    "skills/manager/backlog-refinement — uses jira_search_issues to pull sprint backlog",
+    "skills/manager/sprint-retrospective — uses jira_create_issue for action items",
+    "skills/manager/engineering-metrics — uses jira_search_issues with JQL for metrics"
+  ]
+}

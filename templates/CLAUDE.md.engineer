@@ -1,0 +1,80 @@
+# PROJECT_NAME — Engineering Context
+
+<!-- Replace all UPPERCASE placeholders before committing -->
+
+## Project overview
+<!-- 2-3 sentences: what this service does, who uses it, why it matters -->
+PROJECT_NAME is a [describe the service]. It serves [audience] by [core value proposition].
+
+## Tech stack
+- **Language:** LANGUAGE (e.g. TypeScript 5.x / Python 3.12 / Go 1.22)
+- **Framework:** FRAMEWORK (e.g. Next.js 14 / FastAPI / Gin)
+- **Database:** DATABASE (e.g. PostgreSQL 15 + Redis)
+- **Infra:** INFRA (e.g. AWS ECS + RDS / GCP Cloud Run / Kubernetes)
+- **CI/CD:** CI_TOOL (e.g. GitHub Actions → ECR → ECS)
+
+## Repository structure
+```
+src/
+  api/          # HTTP handlers
+  domain/       # Business logic (no framework dependencies)
+  infra/        # DB, external API clients
+  jobs/         # Background workers
+tests/
+  unit/
+  integration/
+docs/
+```
+
+## How to run locally
+```bash
+# Install
+npm install         # or: pip install -e ".[dev]" / go mod download
+
+# Environment
+cp .env.example .env
+# Fill in required vars — see .env.example comments
+
+# Start
+npm run dev         # or: make dev
+```
+
+## Testing
+```bash
+npm test            # unit tests
+npm run test:int    # integration tests (requires local DB)
+npm run test:e2e    # end-to-end (requires running app)
+```
+Coverage target: **≥80% on domain/ and api/**.
+
+## Key conventions
+- **Branching:** `feature/`, `fix/`, `chore/` prefixes; PRs target `main`
+- **Commits:** Conventional Commits (`feat:`, `fix:`, `chore:` etc.)
+- **Error handling:** Never swallow errors; always log with context
+- **Secrets:** Never hardcode. Use env vars or AWS Secrets Manager
+- **Migrations:** Backwards-compatible only; no destructive changes without a rollback plan
+
+## Architecture decisions
+<!-- Link to ADRs or summarise key decisions -->
+- ADR-001: [Decision title] — `docs/adr/001-*.md`
+- ADR-002: [Decision title] — `docs/adr/002-*.md`
+
+## What NOT to do
+- Don't modify `src/domain/` without tests
+- Don't add direct DB calls in `src/api/` — use domain layer
+- Don't commit `node_modules/`, `.env`, or any credential files
+- Don't use `any` in TypeScript unless explicitly justified
+
+## Relevant skills
+<!-- Skills from a53ali/ai-dev that apply to this project -->
+- `code-review` — when reviewing PRs
+- `test-driven-development` — when adding features
+- `refactoring` — when improving existing code
+- `debugging` — when diagnosing issues
+- `database-optimization` — when working on DB queries
+- `performance-optimization` — when profiling hot paths
+
+## Contacts
+- **On-call:** [Pagerduty rotation or person]
+- **Jira project:** [PROJECT_KEY]
+- **Runbooks:** [Confluence space link]

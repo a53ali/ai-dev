@@ -42,7 +42,7 @@ If you work from inside this cloned repo, **Codex** and **Claude Code** discover
 git clone https://github.com/a53ali/ai-dev.git
 cd ai-dev
 ./install.sh --profile=all --agent=claude     # installs to ~/.claude/skills/
-./install.sh --profile=all --agent=codex      # installs to ~/.agents/skills/
+./install.sh --profile=all --agent=codex      # installs to ~/.codex/skills/
 ./install.sh --profile=all --agent=copilot    # installs to ~/.copilot/skills/
 ```
 
@@ -62,12 +62,24 @@ cd ai-dev
 
 ---
 
+## What's in this repo
+
+| Directory | Purpose |
+|-----------|---------|
+| `skills/` | 51 AI agent skills (guidance documents) |
+| `hooks/` | Claude Code lifecycle hooks — enforce behaviour automatically |
+| `templates/` | Drop-in `CLAUDE.md` / `AGENTS.md` / `copilot-instructions.md` templates |
+| `mcp/` | Curated MCP server configs (Jira, Confluence, GitHub, Linear) |
+| `profiles/` | Skill bundles by role for `install.sh` |
+
+---
+
 ## Agent Compatibility
 
 | Agent | Install path | Format |
 |-------|-------------|--------|
 | **Claude Code** | `~/.claude/skills/` | `skill-name/SKILL.md` |
-| **Codex CLI** | `~/.agents/skills/` | `skill-name/SKILL.md` |
+| **Codex CLI** | `~/.codex/skills/` | `skill-name/SKILL.md` |
 | **Copilot CLI** | `~/.copilot/skills/` | flat `skill-name.md` |
 
 Skills follow the [agentskills.io](https://agentskills.io) open standard — natively compatible with Claude Code and Codex CLI.
@@ -91,6 +103,60 @@ These skills are built on two bodies of knowledge:
 - **[leaddev.com](https://leaddev.com)** — Engineering leadership, DORA metrics, blameless retrospectives, team health, flow metrics, career ladders
 
 Skills work across monoliths, modular monoliths, and distributed/microservice architectures.
+
+---
+
+## Hooks (Claude Code only)
+
+Hooks run shell scripts automatically at lifecycle events — before/after file writes, before shell commands, etc. They **enforce** behaviour rather than just guiding it.
+
+```bash
+# Install all hooks to your user-level Claude settings
+mkdir -p ~/.claude/hooks
+cp hooks/*.sh ~/.claude/hooks/ && chmod +x ~/.claude/hooks/*.sh
+cp hooks/settings.json ~/.claude/settings.json
+```
+
+See [`hooks/README.md`](hooks/README.md) for per-hook documentation and project-level install instructions.
+
+| Hook | Trigger | Effect |
+|------|---------|--------|
+| `secrets-scanner.sh` | Before Write/Edit | Blocks API keys, tokens, private keys |
+| `lint-on-write.sh` | After Write/Edit | Runs ESLint / Ruff / shellcheck automatically |
+| `test-reminder.sh` | After Write/Edit | Reminds agent to add tests for changed source files |
+| `block-destructive.sh` | Before Bash | Blocks `rm -rf`, `git push --force`, `DROP TABLE` |
+| `conventional-commit.sh` | Before Bash | Validates commit messages follow Conventional Commits |
+
+---
+
+## Templates
+
+Drop-in instruction files that give agents immediate project context. Copy one to your project root before starting a session.
+
+```bash
+cp templates/CLAUDE.md.engineer ./CLAUDE.md   # Claude Code — engineer project
+cp templates/CLAUDE.md.manager  ./CLAUDE.md   # Claude Code — manager workspace
+cp templates/AGENTS.md          ./AGENTS.md   # Codex CLI
+cp templates/copilot-instructions.md .github/ # GitHub Copilot CLI
+```
+
+See [`templates/README.md`](templates/README.md) for full usage guide.
+
+---
+
+## MCP Configurations
+
+Pre-configured MCP server definitions for common engineering tools. MCPs extend what agents can *do* (live data access) rather than how they behave.
+
+```bash
+# See mcp/README.md for setup instructions per agent
+cat mcp/jira.json        # Jira — query/create issues, manage sprints
+cat mcp/confluence.json  # Confluence — search/write pages
+cat mcp/github.json      # GitHub — PRs, issues, code search, CI
+cat mcp/linear.json      # Linear — issues, cycles, projects
+```
+
+See [`mcp/README.md`](mcp/README.md) for setup per agent (Claude Code / Codex / Copilot CLI).
 
 ---
 
