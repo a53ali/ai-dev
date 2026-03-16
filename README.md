@@ -1,6 +1,6 @@
 # ai-dev — Skills Library for Engineers & Engineering Managers
 
-A curated set of **29 AI agent skills** for engineers and engineering managers. Works with **Claude Code**, **Codex CLI**, and **GitHub Copilot CLI**. Language-agnostic, grounded in industry-proven principles.
+A curated set of **30 AI agent skills** for engineers and engineering managers. Works with **Claude Code**, **Codex CLI**, and **GitHub Copilot CLI**. Language-agnostic, grounded in industry-proven principles.
 
 ---
 
@@ -67,8 +67,8 @@ cd ai-dev
 | `engineer` | All 12 engineer skills | ICs and senior engineers |
 | `manager` | All 10 manager skills | EMs, tech leads, staff+ |
 | `planning` | tdd, adr, backlog-refinement, flow-metrics, sprint-health, roadmap | Sprint planning and delivery |
-| `cross-cutting` | skill-router, strangler-fig, observability, team-topology, event-driven, monolith-to-services, ci-cd | Architecture and platform work |
-| `all` | All 28 skills | Full library |
+| `cross-cutting` | skill-router, strangler-fig, observability, team-topology, event-driven, monolith-to-services, ci-cd, agent-quality | Architecture and platform work |
+| `all` | All 30 skills | Full library |
 
 ---
 
@@ -155,6 +155,7 @@ Skills work across monoliths, modular monoliths, and distributed/microservice ar
 | **Event-Driven Design** | `skills/cross-cutting/event-driven-design/` | Event storming, domain events, pub/sub, CQRS, event sourcing |
 | **Monolith to Services** | `skills/cross-cutting/monolith-to-services/` | Decomposition heuristics, bounded contexts, service extraction order |
 | **CI/CD Pipeline Analysis** | `skills/cross-cutting/ci-cd-pipeline-analysis/` | Diagnose slow/failing pipelines on GitHub Actions, Jenkins, TeamCity |
+| **Agent Quality Patterns** | `skills/cross-cutting/agent-quality-patterns/` | Self-critique loops, evaluator-optimizer, LLM-as-judge, golden dataset evals |
 
 ---
 

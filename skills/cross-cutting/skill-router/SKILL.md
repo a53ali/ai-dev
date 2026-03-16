@@ -42,6 +42,7 @@ Describe your problem in plain language. The router will:
 | Migrating off a monolith | `strangler-fig` → `monolith-to-services` → `event-driven-design` → `architecture-decision-record` |
 | System is hard to change | `refactoring` → `technical-debt-prioritization` → `architecture-decision-record` |
 | Building a new API | `api-design` → `documentation` → `security-review` |
+| Shipping an AI agent | `agent-quality-patterns` → `ci-cd-pipeline-analysis` → `observability` |
 | Database changes are scary | `database-migration` → `observability` → `feature-flags` |
 | Need to record a key decision | `architecture-decision-record` |
 

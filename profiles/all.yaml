@@ -1,6 +1,6 @@
 # All — every skill in the library
 name: all
-description: The complete skills library — all 29 skills
+description: The complete skills library — all 30 skills
 skills:
   # Engineer
   - skills/engineer/refactoring
@@ -34,3 +34,4 @@ skills:
   - skills/cross-cutting/event-driven-design
   - skills/cross-cutting/monolith-to-services
   - skills/cross-cutting/ci-cd-pipeline-analysis
+  - skills/cross-cutting/agent-quality-patterns

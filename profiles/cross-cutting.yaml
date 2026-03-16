@@ -9,3 +9,4 @@ skills:
   - skills/cross-cutting/event-driven-design
   - skills/cross-cutting/monolith-to-services
   - skills/cross-cutting/ci-cd-pipeline-analysis
+  - skills/cross-cutting/agent-quality-patterns
