@@ -61,6 +61,7 @@ Describe your problem in plain language. The router will:
 | Bug found — need a high-quality report | `bug-reporting` → `acceptance-criteria` |
 | Exploring edge cases / finding what scripted tests miss | `exploratory-testing` → `bug-reporting` |
 | Deciding what acceptance criteria to put on a story | `acceptance-criteria` → `backlog-refinement` |
+| Breaking down a large epic into sprint-ready stories | `story-slicing` → `backlog-refinement` → `acceptance-criteria` |
 | Setting up or reviewing the test pipeline | `ci-cd-pipeline-analysis` → `test-strategy` |
 | AI/LLM test automation quality | `agent-quality-patterns` → `test-strategy` |
 | Evaluating or adopting an MCP server | `mcp-safety-review` → `agent-quality-patterns` |

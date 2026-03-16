@@ -1,6 +1,6 @@
 # ai-dev — Skills Library for Engineers & Engineering Managers
 
-A curated set of **35 AI agent skills** for engineers, QA engineers, and engineering managers. Works with **Claude Code**, **Codex CLI**, and **GitHub Copilot CLI**. Language-agnostic, grounded in industry-proven principles.
+A curated set of **36 AI agent skills** for engineers, QA engineers, and engineering managers. Works with **Claude Code**, **Codex CLI**, and **GitHub Copilot CLI**. Language-agnostic, grounded in industry-proven principles.
 
 ---
 
@@ -67,7 +67,7 @@ cd ai-dev
 |---------|--------|----------|
 | `recommended` | skill-router, refactoring, code-review, debugging, tdd, backlog-refinement, observability | Anyone — start here |
 | `engineer` | All 12 engineer skills | ICs and senior engineers |
-| `manager` | All 10 manager skills | EMs, tech leads, staff+ |
+| `manager` | All 11 manager skills | EMs, tech leads, staff+ |
 | `qa` | test-strategy, bug-reporting, acceptance-criteria, exploratory-testing + 4 cross-cutting | QA engineers and SDETs |
 | `planning` | tdd, adr, backlog-refinement, flow-metrics, sprint-health, roadmap | Sprint planning and delivery |
 | `cross-cutting` | skill-router, strangler-fig, observability, team-topology, event-driven, monolith-to-services, ci-cd, agent-quality, mcp-safety-review | Architecture and platform work |
@@ -155,6 +155,7 @@ Skills work across monoliths, modular monoliths, and distributed/microservice ar
 | **Sprint Health Check** | `skills/manager/sprint-health-check/` | Mid-sprint signal reading for scope, progress, blockers, morale |
 | **Roadmap Prioritization** | `skills/manager/roadmap-prioritization/` | RICE/ICE scoring + dependency mapping for quarterly planning |
 | **Sprint Retrospective** | `skills/manager/sprint-retrospective/` | Facilitate retros, analyze themes with AI, create tracked action items |
+| **Story Slicing** | `skills/manager/story-slicing/` | Slice epics into vertical slices; agent-native work breakdown, story enhancement, edge case generation, dependency detection, NL→JQL, and point estimation |
 
 ### 🔀 Cross-Cutting Skills
 

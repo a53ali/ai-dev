@@ -28,11 +28,11 @@ for arg in "$@"; do
       echo "Profiles:"
       echo "  recommended   Starter set (skill-router, refactoring, code-review, debugging, tdd, backlog-refinement, observability)"
       echo "  engineer      All 12 engineer / IC skills"
-      echo "  manager       All 10 engineering manager skills"
+      echo "  manager       All 11 engineering manager skills"
       echo "  qa            All 4 QA skills + relevant cross-cutting (test-strategy, bug-reporting, AC, exploratory)"
       echo "  planning      Planning-focused skills (tdd, adr, backlog, flow-metrics, sprint-health, roadmap)"
       echo "  cross-cutting All 9 cross-cutting skills"
-      echo "  all           All 35 skills"
+      echo "  all           All 36 skills"
       echo ""
       echo "Agents:"
       echo "  claude    → ~/.claude/skills/   (Claude Code, agentskills.io format)"
@@ -92,6 +92,7 @@ skills_manager=(
   "skills/manager/sprint-health-check"
   "skills/manager/roadmap-prioritization"
   "skills/manager/sprint-retrospective"
+  "skills/manager/story-slicing"
 )
 
 skills_planning=(
