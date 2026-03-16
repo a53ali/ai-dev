@@ -1,6 +1,6 @@
 ---
 name: jira-intelligence
-description: Agent-native equivalents of Jira Intelligence (Atlassian AI) — no Premium license required. Seven commands: work breakdown (epic → child stories), story enhancement (rewrite vague tickets), comment thread summary (decisions + action items), edge case generator, dependency detector (sprint sequencing), story point estimator (codebase-grounded Fibonacci), and natural language to JQL translation. Works with or without Jira MCP.
+description: "Agent-native equivalents of Jira Intelligence (Atlassian AI) — no Premium license required. Seven commands: work breakdown (epic → child stories), story enhancement (rewrite vague tickets), comment thread summary (decisions + action items), edge case generator, dependency detector (sprint sequencing), story point estimator (codebase-grounded Fibonacci), and natural language to JQL translation. Works with or without Jira MCP."
 triggers:
   - "improve this ticket"
   - "rewrite this story"
