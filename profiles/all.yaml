@@ -1,0 +1,22 @@
+# All — every skill in the library
+name: all
+description: The complete skills library — all 15 skills
+skills:
+  # Engineer
+  - skills/engineer/refactoring
+  - skills/engineer/test-driven-development
+  - skills/engineer/architecture-decision-record
+  - skills/engineer/code-review
+  - skills/engineer/debugging
+  - skills/engineer/continuous-delivery
+  - skills/engineer/api-design
+  - skills/engineer/feature-flags
+  # Manager
+  - skills/manager/backlog-refinement
+  - skills/manager/incident-retrospective
+  - skills/manager/technical-debt-prioritization
+  - skills/manager/engineering-metrics
+  - skills/manager/flow-metrics-analysis
+  # Cross-cutting
+  - skills/cross-cutting/strangler-fig
+  - skills/cross-cutting/observability

@@ -1,0 +1,12 @@
+# Engineer — all IC / software engineer skills
+name: engineer
+description: Full set of skills for individual contributors and senior engineers
+skills:
+  - skills/engineer/refactoring
+  - skills/engineer/test-driven-development
+  - skills/engineer/architecture-decision-record
+  - skills/engineer/code-review
+  - skills/engineer/debugging
+  - skills/engineer/continuous-delivery
+  - skills/engineer/api-design
+  - skills/engineer/feature-flags

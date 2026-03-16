@@ -1,0 +1,6 @@
+# Cross-cutting — architecture and observability skills for any codebase
+name: cross-cutting
+description: Skills that apply across monoliths and distributed systems
+skills:
+  - skills/cross-cutting/strangler-fig
+  - skills/cross-cutting/observability

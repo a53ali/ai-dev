@@ -1,0 +1,9 @@
+# Manager — all engineering manager skills
+name: manager
+description: Full set of skills for engineering managers and tech leads
+skills:
+  - skills/manager/backlog-refinement
+  - skills/manager/incident-retrospective
+  - skills/manager/technical-debt-prioritization
+  - skills/manager/engineering-metrics
+  - skills/manager/flow-metrics-analysis
