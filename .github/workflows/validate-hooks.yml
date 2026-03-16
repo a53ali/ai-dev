@@ -1,0 +1,96 @@
+# Validates all hook scripts and settings.json in hooks/
+# Checks:
+#   1. JSON integrity — settings.json is well-formed
+#   2. Script references — every command in settings.json maps to a real .sh file
+#   3. Shellcheck — static analysis on every .sh script
+#   4. Syntax — bash -n dry-run on every .sh script
+
+name: Validate Hooks
+
+on:
+  push:
+    paths:
+      - "hooks/**"
+  pull_request:
+    paths:
+      - "hooks/**"
+  workflow_dispatch:
+
+jobs:
+  validate-json:
+    name: Validate settings.json
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate JSON is well-formed
+        run: |
+          echo "Checking hooks/settings.json..."
+          python3 -c "import json, sys; json.load(open('hooks/settings.json'))" \
+            && echo "✅ settings.json is valid JSON" \
+            || { echo "❌ settings.json is not valid JSON"; exit 1; }
+
+      - name: Check all referenced scripts exist
+        run: |
+          echo "Checking script references in settings.json..."
+          failed=0
+          # Extract every command value that ends in .sh, strip ~/.claude/hooks/ prefix
+          scripts=$(python3 - <<'EOF'
+          import json, re
+          data = json.load(open("hooks/settings.json"))
+          cmds = re.findall(r'"command"\s*:\s*"([^"]+\.sh)"', json.dumps(data))
+          for c in cmds:
+              # normalise: ~/... or absolute path → just the basename
+              print(c.split("/")[-1])
+          EOF
+          )
+          for script in $scripts; do
+            if [ -f "hooks/$script" ]; then
+              echo "  ✅ hooks/$script"
+            else
+              echo "  ❌ hooks/$script — referenced in settings.json but not found"
+              failed=1
+            fi
+          done
+          exit $failed
+
+  shellcheck:
+    name: Shellcheck — ${{ matrix.script }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        script:
+          - secrets-scanner.sh
+          - lint-on-write.sh
+          - test-reminder.sh
+          - block-destructive.sh
+          - conventional-commit.sh
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install shellcheck
+        run: sudo apt-get install -y shellcheck
+
+      - name: shellcheck hooks/${{ matrix.script }}
+        run: shellcheck --severity=warning hooks/${{ matrix.script }}
+
+      - name: Syntax check (bash -n)
+        run: bash -n hooks/${{ matrix.script }} && echo "✅ syntax ok"
+
+  summary:
+    name: All hooks valid?
+    needs: [validate-json, shellcheck]
+    runs-on: ubuntu-latest
+    if: always()
+    steps:
+      - name: Report
+        run: |
+          json="${{ needs.validate-json.result }}"
+          sc="${{ needs.shellcheck.result }}"
+          if [ "$json" = "success" ] && [ "$sc" = "success" ]; then
+            echo "✅ All hooks passed validation"
+          else
+            echo "❌ Validation failed — json=$json  shellcheck=$sc"
+            exit 1
+          fi
