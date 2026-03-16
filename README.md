@@ -1,6 +1,6 @@
 # ai-dev — Skills Library for Engineers & Engineering Managers
 
-A curated set of **34 AI agent skills** for engineers, QA engineers, and engineering managers. Works with **Claude Code**, **Codex CLI**, and **GitHub Copilot CLI**. Language-agnostic, grounded in industry-proven principles.
+A curated set of **35 AI agent skills** for engineers, QA engineers, and engineering managers. Works with **Claude Code**, **Codex CLI**, and **GitHub Copilot CLI**. Language-agnostic, grounded in industry-proven principles.
 
 ---
 
@@ -70,8 +70,8 @@ cd ai-dev
 | `manager` | All 10 manager skills | EMs, tech leads, staff+ |
 | `qa` | test-strategy, bug-reporting, acceptance-criteria, exploratory-testing + 4 cross-cutting | QA engineers and SDETs |
 | `planning` | tdd, adr, backlog-refinement, flow-metrics, sprint-health, roadmap | Sprint planning and delivery |
-| `cross-cutting` | skill-router, strangler-fig, observability, team-topology, event-driven, monolith-to-services, ci-cd, agent-quality | Architecture and platform work |
-| `all` | All 34 skills | Full library |
+| `cross-cutting` | skill-router, strangler-fig, observability, team-topology, event-driven, monolith-to-services, ci-cd, agent-quality, mcp-safety-review | Architecture and platform work |
+| `all` | All 35 skills | Full library |
 
 ---
 
@@ -168,6 +168,7 @@ Skills work across monoliths, modular monoliths, and distributed/microservice ar
 | **Monolith to Services** | `skills/cross-cutting/monolith-to-services/` | Decomposition heuristics, bounded contexts, service extraction order |
 | **CI/CD Pipeline Analysis** | `skills/cross-cutting/ci-cd-pipeline-analysis/` | Diagnose slow/failing pipelines on GitHub Actions, Jenkins, TeamCity |
 | **Agent Quality Patterns** | `skills/cross-cutting/agent-quality-patterns/` | Self-critique loops, evaluator-optimizer, LLM-as-judge, golden dataset evals |
+| **MCP Safety Review** | `skills/cross-cutting/mcp-safety-review/` | Evaluate an MCP's outbound requests, blast radius, prompt injection risk, secrets handling, and sandbox validation |
 
 ---
 

@@ -63,6 +63,7 @@ Describe your problem in plain language. The router will:
 | Deciding what acceptance criteria to put on a story | `acceptance-criteria` → `backlog-refinement` |
 | Setting up or reviewing the test pipeline | `ci-cd-pipeline-analysis` → `test-strategy` |
 | AI/LLM test automation quality | `agent-quality-patterns` → `test-strategy` |
+| Evaluating or adopting an MCP server | `mcp-safety-review` → `agent-quality-patterns` |
 
 ### People & Teams
 | Trigger | Skills |

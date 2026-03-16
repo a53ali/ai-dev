@@ -31,8 +31,8 @@ for arg in "$@"; do
       echo "  manager       All 10 engineering manager skills"
       echo "  qa            All 4 QA skills + relevant cross-cutting (test-strategy, bug-reporting, AC, exploratory)"
       echo "  planning      Planning-focused skills (tdd, adr, backlog, flow-metrics, sprint-health, roadmap)"
-      echo "  cross-cutting All 8 cross-cutting skills"
-      echo "  all           All 34 skills"
+      echo "  cross-cutting All 9 cross-cutting skills"
+      echo "  all           All 35 skills"
       echo ""
       echo "Agents:"
       echo "  claude    → ~/.claude/skills/   (Claude Code, agentskills.io format)"
@@ -112,6 +112,7 @@ skills_cross_cutting=(
   "skills/cross-cutting/monolith-to-services"
   "skills/cross-cutting/ci-cd-pipeline-analysis"
   "skills/cross-cutting/agent-quality-patterns"
+  "skills/cross-cutting/mcp-safety-review"
 )
 
 skills_qa=(
