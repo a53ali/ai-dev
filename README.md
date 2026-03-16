@@ -41,19 +41,6 @@ If you work from inside this cloned repo, **Codex** and **Claude Code** discover
 ```bash
 git clone https://github.com/a53ali/ai-dev.git
 cd ai-dev
-
-# Codex auto-discovers from .agents/skills/
-codex
-
-# Claude Code auto-discovers from .claude/skills/
-claude
-```
-
-### Local install from clone
-
-```bash
-git clone https://github.com/a53ali/ai-dev.git
-cd ai-dev
 ./install.sh --profile=all --agent=claude     # installs to ~/.claude/skills/
 ./install.sh --profile=all --agent=codex      # installs to ~/.agents/skills/
 ./install.sh --profile=all --agent=copilot    # installs to ~/.copilot/skills/
@@ -77,11 +64,11 @@ cd ai-dev
 
 ## Agent Compatibility
 
-| Agent | Install path | Format | Auto-discovery |
-|-------|-------------|--------|---------------|
-| **Claude Code** | `~/.claude/skills/` | `skill-name/SKILL.md` | `.claude/skills/` in repo |
-| **Codex CLI** | `~/.agents/skills/` | `skill-name/SKILL.md` | `.agents/skills/` in repo |
-| **Copilot CLI** | `~/.copilot/skills/` | flat `skill-name.md` | `/skills` command |
+| Agent | Install path | Format |
+|-------|-------------|--------|
+| **Claude Code** | `~/.claude/skills/` | `skill-name/SKILL.md` |
+| **Codex CLI** | `~/.agents/skills/` | `skill-name/SKILL.md` |
+| **Copilot CLI** | `~/.copilot/skills/` | flat `skill-name.md` |
 
 Skills follow the [agentskills.io](https://agentskills.io) open standard — natively compatible with Claude Code and Codex CLI.
 
@@ -189,8 +176,8 @@ Each skill (`SKILL.md`) follows the [agentskills.io](https://agentskills.io) ope
 
 1. Create a new directory under `skills/<category>/<skill-name>/`
 2. Add a `SKILL.md` file following the existing format
-3. Add a symlink in `.agents/skills/` and `.claude/skills/`
-4. Add the skill to relevant profiles in `profiles/`
+3. Add the skill to relevant `profiles/*.yaml` files
+4. Update `install.sh` — add the skill path to the appropriate array(s)
 5. Update this README's skill index table
 
 ---
